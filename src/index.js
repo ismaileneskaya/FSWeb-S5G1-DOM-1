@@ -43,3 +43,67 @@ console.log('Proje açıldı!')
 
 
 /* Kodlar Buradan aşağıya */
+
+
+
+
+
+
+const navLinks = document.querySelectorAll("header nav a")
+navLinks.forEach((element,index)=>{
+  element.textContent= siteContent.nav["nav-item-"+(index+1)]
+  element.classList.add("italic")
+})
+document.querySelector("h1").textContent= siteContent.cta.h1;
+document.querySelector(".cta button").textContent=siteContent.cta.button;
+document.getElementById("logo-img").src=siteContent.images["logo-img"];
+document.getElementById("cta-img").src=siteContent.images["cta-img"];
+
+{
+  const divTextcontent =document.querySelectorAll("section.main-content.text-content");
+  const mainContentArr=[];
+
+  for(let key in siteContent["ana-içerik"])
+    mainContentArr.push(siteContent["ana-içerik"][key]);
+  divTextcontent.forEach((element, i) =>{
+    element.children[0].textContent = mainContentArr[2 * i];
+    element.children[1].textContent = mainContentArr[2 * i+1];
+  })
+
+}
+
+document.getElementById("middle-img").src= siteContent.images["middle-img"];
+
+const contact =document.querySelector(".contact h4");
+
+contact.textContent=siteContent.iletisim("iletişim-h4");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
